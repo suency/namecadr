@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head lang="en">
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="viewport" content="width=device-width initial-scale=1 maximum-scale=1 user-scalable=no" />
+
+    <style type="text/css">
+        #container{
+            position: relative;
+            text-align: center;
+        }
+
+        #container>div{
+            text-align: center;
+        }
+
+        body{
+            background: #3F4448;
+            font-family: "Microsoft YaHei";
+            font-size: 100%;
+            font-size: 1.5em;
+            min-width: 350px;
+        }
+
+        #container>div>img:nth-child(1){
+            width: 100%;
+            position: relative;
+        }
+
+        #container>div>img:nth-child(2){
+            position: absolute;
+            left: 4.5%;
+            top: 18%;
+            width: 28%;
+        }
+
+      
+        #container .name{
+            position: absolute;
+            left: 40%;
+            top: 32%;
+            width: 50%;
+            color: #343738;
+            font-weight: bold;
+        }
+
+        #container .phone{
+            position: absolute;
+            left: 49%;
+            top: 44%;
+            width: 50%;
+            color: #343738;
+        }
+
+        .youNameCards{
+            text-align: center;
+            margin-top: 1%;
+        }
+
+        .button-style{
+             color:rgb(255, 255, 255);font-size:27px;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px;border-width:0px;border-color:rgb(197, 229, 145);border-style:solid;border-radius:9px;background-color:rgb(120, 195, 0);
+             cursor: pointer;
+
+        }
+
+        .button-style:hover{
+            color:#ffffff;background-color:#78c300;border-color:#c5e591;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="wrap2">
+            <img src="images/background.png"/>
+            <img class="code" src="images/code.png" />
+            <span class="name">微鸟英语课程顾问Jason</span>
+            <span class="phone">18000000000</span>
+        </div>
+
+       <!--  <div><img src="images/code.png" /></div> -->
+
+    </div>
+<button class="button-style" onclick="generateNameCard()">生成名片</button>
+    <div class="youNameCards">
+        
+    </div>
+
+    <script type="text/javascript" src="js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="js/fittext.js"></script>
+    <script type="text/javascript" src="js/html2canvas.js"></script>
+
+    <script type="text/javascript">
+        fitText($('.name'),1.2);
+        fitText($('.phone'),1.2);
+
+        function generateNameCard(){
+            $(".wrap2").height($(".wrap2>img:nth-child(1)").height());
+
+             html2canvas($("#container"), {
+                onrendered: function(canvas) {
+                    $(".youNameCards").append(canvas);
+                },
+              // width: 300,
+              // height: 300
+            });
+        }
+       
+        //$(".wrap2").height($(".wrap2>img:nth-child(1)").height());
+    </script>
+</body>
+</html>
+
+
