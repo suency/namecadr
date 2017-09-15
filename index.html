@@ -38,19 +38,15 @@
 
       
         #container .name{
-            position: absolute;
-            left: 40%;
-            top: 32%;
-            width: 50%;
+            position: relative;
+            display: block;
             color: #343738;
             font-weight: bold;
         }
 
         #container .phone{
-            position: absolute;
-            left: 49%;
-            top: 44%;
-            width: 50%;
+            position: relative;
+            display: block;
             color: #343738;
         }
 
@@ -68,6 +64,14 @@
         .button-style:hover{
             color:#ffffff;background-color:#78c300;border-color:#c5e591;
         }
+
+        .text{
+            position: absolute;
+            top: 34%;
+            text-align: right;
+            width: 49%;
+            margin-left: 41%;
+        }
     </style>
 </head>
 
@@ -76,8 +80,11 @@
         <div class="wrap2">
             <img src="images/background.png"/>
             <img class="code" src="images/code.png" />
-            <span class="name">微鸟英语课程顾问Jason</span>
-            <span class="phone">18000000000</span>
+            <div class="text">
+                <span class="name">问Jaadaasdad</span>
+                <span class="phone">18000000000</span>
+            </div>
+            
         </div>
 
        <!--  <div><img src="images/code.png" /></div> -->
@@ -93,7 +100,7 @@
     <script type="text/javascript" src="js/html2canvas.js"></script>
 
     <script type="text/javascript">
-        fitText($('.name'),1.2);
+       fitText($('.name'),1.2);
         fitText($('.phone'),1.2);
 
         function generateNameCard(){
